@@ -7,3 +7,17 @@
 .head-text{
     color: rgb(26, 24, 24);
 }
+.about-para{
+    font-size: 23px;
+}
+.underline{
+    height: 3px;
+    width: 100px;
+    background-color: black;
+    
+}
+.line{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
