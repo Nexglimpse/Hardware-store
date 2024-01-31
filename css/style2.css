@@ -21,3 +21,6 @@
     align-items: center;
     display: flex;
 }
+.drop-menu{
+    background-color: rgb(146, 146, 146);
+}
