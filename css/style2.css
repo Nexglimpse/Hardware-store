@@ -27,12 +27,12 @@
 
 /* login */
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-*{
+/* *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-}
+} */
 html,body{
   display: grid;
   height: 100%;
@@ -51,6 +51,8 @@ html,body{
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+  margin-top: 180px;
+  margin-bottom: 50px;
 }
 .wrapper .title-text{
   display: flex;
@@ -96,8 +98,9 @@ html,body{
   left: 0;
   z-index: 0;
   border-radius: 15px;
-  background: -webkit-linear-gradient(left,#fffb19,#d8e619,#e2df08
-, #fbff00);
+  /* background: -webkit-linear-gradient(left,#e6e206e3,#d5e409,#fffc3b
+, #fcff54); */
+background-color: #fae100;
   transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
 }
 input[type="radio"]{
@@ -107,7 +110,7 @@ input[type="radio"]{
   left: 50%;
 }
 #signup:checked ~ label.signup{
-  color: #fff;
+  color: #000000;
   cursor: default;
   user-select: none;
 }
@@ -118,6 +121,7 @@ input[type="radio"]{
   color: #000;
 }
 #login:checked ~ label.login{
+  color: #000;
   cursor: default;
   user-select: none;
 }
@@ -182,13 +186,18 @@ form .btn{
   border-radius: 15px;
   position: relative;
   overflow: hidden;
+  border: 2px solid rgb(247, 224, 18);
+
+}
+form .btn:hover{
+  background-color: #fae100;
 }
 form .btn .btn-layer{
   height: 100%;
   width: 300%;
   position: absolute;
   left: -100%;
-  background-color: rgb(255, 255, 33);
+  /* background-color: rgb(27, 27, 22); */
   border-radius: 15px;
   transition: all 0.4s ease;;
 }
