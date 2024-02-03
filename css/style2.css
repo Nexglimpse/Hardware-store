@@ -222,3 +222,10 @@ form .btn input[type="submit"]{
     border: 1px solid rgb(66, 66, 62);
 }
 /* login end */
+
+
+.remove-btn{
+  border: 2px solid yellow;
+  padding: 6px 12px ;
+  border-radius: 7px;
+}
