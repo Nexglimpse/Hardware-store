@@ -112,7 +112,7 @@
 }
 
 .topbar .top-link a small:hover i {
-    color: var( rgb(87, 47, 47)) !important;
+    background-color: #1e2125 !important
 }
 /*** Topbar End ***/
 
@@ -477,6 +477,3 @@
     border-bottom: 2px solid var(--bs-secondary) !important;
 }
 /*** Single Page End ***/
-
-
-/*** Footer Start ***/
