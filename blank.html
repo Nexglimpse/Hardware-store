@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Card Grid with Pagination</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+          <!-- Google Web Fonts -->
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap" rel="stylesheet"> 
+  
+          <!-- Icon Font Stylesheet -->
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  
+          <!-- Libraries Stylesheet -->
+          <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+          <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  
+  
+          <!-- Customized Bootstrap Stylesheet -->
+          <link href="css/bootstrap.min.css" rel="stylesheet">
+  
+          <!-- Template Stylesheet -->
+          <link href="css/style.css" rel="stylesheet">
+          <link href="css/style2.css" rel="stylesheet">
+  <style>
+    .card {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row" id="card-container">
+    <!-- Cards will be dynamically added here -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Card 1</h5>
+          <p class="card-text">This is a sample card.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Card 1</h5>
+            <p class="card-text">This is a sample card.</p>
+          </div>
+        </div>
+      </div><div class="col-md-6 col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Card 1</h5>
+            <p class="card-text">This is a sample card.</p>
+          </div>
+        </div>
+      </div><div class="col-md-6 col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Card 1</h5>
+            <p class="card-text">This is a sample card.</p>
+          </div>
+        </div>
+      </div><div class="col-md-6 col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Card 1</h5>
+            <p class="card-text">This is a sample card.</p>
+          </div>
+        </div>
+      </div><div class="col-md-6 col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Card 1</h5>
+            <p class="card-text">This is a sample card.</p>
+          </div>
+        </div>
+      </div><div class="col-md-6 col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Card 1</h5>
+            <p class="card-text">This is a sample card.</p>
+          </div>
+        </div>
+      </div><div class="col-md-6 col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Card 1</h5>
+            <p class="card-text">This is a sample card.</p>
+          </div>
+        </div>
+      </div><div class="col-md-6 col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Card 1</h5>
+            <p class="card-text">This is a sample card.</p>
+          </div>
+        </div>
+      </div><div class="col-md-6 col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Card 1</h5>
+            <p class="card-text">This is a sample card.</p>
+          </div>
+        </div>
+      </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Card 2</h5>
+          <p class="card-text">This is a sample card.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Add more cards here -->
+  </div>
+
+  <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center" id="pagination">
+      <!-- Pagination links will be dynamically added here -->
+    </ul>
+  </nav>
+</div>
+
+<!-- Bootstrap JS (optional, only required if you need JS functionality) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  const cardsPerPage = 8;
+  let currentPage = 1;
+  const cards = document.querySelectorAll('#card-container .card');
+
+  // Function to render cards based on current page
+  function renderCards(page) {
+    cards.forEach((card, index) => {
+      if (index >= (page - 1) * cardsPerPage && index < page * cardsPerPage) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  // Function to render pagination links
+  function renderPagination() {
+    const totalPages = Math.ceil(cards.length / cardsPerPage);
+    const paginationContainer = document.getElementById("pagination");
+    paginationContainer.innerHTML = "";
+
+    for (let i = 1; i <= totalPages; i++) {
+      const li = document.createElement("li");
+      li.classList.add("page-item");
+      const a = document.createElement("a");
+      a.classList.add("page-link");
+      a.href = "#";
+      a.textContent = i;
+      li.appendChild(a);
+      li.addEventListener("click", () => {
+        currentPage = i;
+        renderCards(currentPage);
+        updateActivePage();
+      });
+      paginationContainer.appendChild(li);
+    }
+
+    updateActivePage();
+  }
+
+  // Function to update active page in pagination
+  function updateActivePage() {
+    const paginationLinks = document.querySelectorAll("#pagination li");
+    paginationLinks.forEach((link, index) => {
+      if (index + 1 === currentPage) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  }
+
+  // Initial render
+  renderCards(currentPage);
+  renderPagination();
+</script>
+</body>
+</html>

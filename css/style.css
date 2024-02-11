@@ -452,7 +452,17 @@
 
 
 /*** Single Page Start ***/
-.pagination {
+.pagination{
+    padding-top: 30px;
+    justify-content: center;
+    padding-bottom: 0px !important;
+}
+@media (max-width :720px){
+    .addtocard{
+        size-adjust: 10px;
+    }
+}
+/* .pagination {
     display: inline-block;
 }
   
@@ -471,7 +481,7 @@
     border: 1px solid var(--bs-secondary);
 }
   
-.pagination a:hover:not(.active) {background-color: var( rgb(87, 47, 47))}
+.pagination a:hover:not(.active) {background-color: var( rgb(87, 47, 47))} */
 
 .nav.nav-tabs .nav-link.active {
     border-bottom: 2px solid var(--bs-secondary) !important;
